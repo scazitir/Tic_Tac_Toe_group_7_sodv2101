@@ -75,8 +75,8 @@
             button9.Name = "button9";
             button9.Size = new Size(125, 125);
             button9.TabIndex = 0;
-            button9.Text = "button1";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button6
             // 
@@ -84,8 +84,8 @@
             button6.Name = "button6";
             button6.Size = new Size(125, 125);
             button6.TabIndex = 0;
-            button6.Text = "button1";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button3
             // 
@@ -93,8 +93,8 @@
             button3.Name = "button3";
             button3.Size = new Size(125, 125);
             button3.TabIndex = 0;
-            button3.Text = "button1";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button8
             // 
@@ -102,8 +102,8 @@
             button8.Name = "button8";
             button8.Size = new Size(125, 125);
             button8.TabIndex = 0;
-            button8.Text = "button1";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button5
             // 
@@ -111,8 +111,8 @@
             button5.Name = "button5";
             button5.Size = new Size(125, 125);
             button5.TabIndex = 0;
-            button5.Text = "button1";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button2
             // 
@@ -120,8 +120,8 @@
             button2.Name = "button2";
             button2.Size = new Size(125, 125);
             button2.TabIndex = 0;
-            button2.Text = "button1";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button7
             // 
@@ -129,8 +129,8 @@
             button7.Name = "button7";
             button7.Size = new Size(125, 125);
             button7.TabIndex = 0;
-            button7.Text = "button1";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button4
             // 
@@ -138,8 +138,8 @@
             button4.Name = "button4";
             button4.Size = new Size(125, 125);
             button4.TabIndex = 0;
-            button4.Text = "button1";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button1
             // 
@@ -147,8 +147,8 @@
             button1.Name = "button1";
             button1.Size = new Size(125, 125);
             button1.TabIndex = 0;
-            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel2
             // 
@@ -249,7 +249,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Super Tic Tac Toe";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
