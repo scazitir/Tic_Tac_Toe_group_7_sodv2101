@@ -4,9 +4,205 @@ namespace Tic_Tac_Toe_group_7_sodv2101
     {
 
         bool playerTurnChecker = false;
+        int pointsCounter;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public void CheckScore()
+        {
+            bool winnerFound = false;
+
+            // Rows
+            if (button1.Text == "X" && button2.Text == "X" && button3.Text == "X")
+            {
+                HighLightButtons(button1, button2, button3);
+                //button1.BackColor = Color.AliceBlue;
+                //button2.BackColor = Color.AliceBlue;
+                //button3.BackColor = Color.AliceBlue;
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button4.Text == "X" && button5.Text == "X" && button6.Text == "X")
+            {
+                HighLightButtons(button4, button5, button6);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button7.Text == "X" && button8.Text == "X" && button9.Text == "X")
+            {
+                HighLightButtons(button7, button8, button9);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // Columns
+            if (button1.Text == "X" && button4.Text == "X" && button7.Text == "X")
+            {
+                HighLightButtons(button1, button4, button7);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button2.Text == "X" && button5.Text == "X" && button8.Text == "X")
+            {
+                HighLightButtons(button2, button5, button8);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button3.Text == "X" && button6.Text == "X" && button9.Text == "X")
+            {
+                HighLightButtons(button3, button6, button9);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // Diagonals
+            if (button1.Text == "X" && button5.Text == "X" && button9.Text == "X")
+            {
+                HighLightButtons(button1, button5, button9);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+            if (button3.Text == "X" && button5.Text == "X" && button7.Text == "X")
+            {
+                HighLightButtons(button3, button5, button7);
+
+                DisplayWinnerMessage("X");
+                pointsCounter = int.Parse(playerXScore.Text);
+                playerXScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // ==================================================
+            // "O" Player
+
+            //Rows
+            if (button1.Text == "O" && button2.Text == "O" && button3.Text == "O")
+            {
+                HighLightButtons(button1, button2, button3);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button4.Text == "O" && button5.Text == "O" && button6.Text == "O")
+            {
+                HighLightButtons(button4, button5, button6);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button7.Text == "O" && button8.Text == "O" && button9.Text == "O")
+            {
+                HighLightButtons(button7, button8, button9);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // Columns
+            if (button1.Text == "O" && button4.Text == "O" && button7.Text == "O")
+            {
+                HighLightButtons(button1, button4, button7);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button2.Text == "O" && button5.Text == "O" && button8.Text == "O")
+            {
+                HighLightButtons(button2, button5, button8);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button3.Text == "O" && button6.Text == "O" && button9.Text == "O")
+            {
+                HighLightButtons(button3, button6, button9);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // Diagonals
+            if (button1.Text == "O" && button5.Text == "O" && button9.Text == "O")
+            {
+                HighLightButtons(button1, button5, button9);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            if (button3.Text == "O" && button5.Text == "O" && button7.Text == "O")
+            {
+                HighLightButtons(button3, button5, button7);
+
+                DisplayWinnerMessage("O");
+                pointsCounter = int.Parse(playerOScore.Text);
+                playerOScore.Text = Convert.ToString(pointsCounter + 1);
+                SetEnableAsFalse();
+                winnerFound = true;
+            }
+
+            // Check for Draw result
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,8 +263,34 @@ namespace Tic_Tac_Toe_group_7_sodv2101
                 playerTurnChecker = false;
             }
 
-            // Implement CheckScore()
+            CheckScore();
             button.Enabled = false;
+        }
+
+        private void SetEnableAsFalse()
+        {
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+        }
+
+        private void HighLightButtons(Button b1, Button b2, Button b3)
+        {
+            b1.BackColor = Color.DarkSeaGreen;
+            b2.BackColor = Color.DarkSeaGreen;
+            b3.BackColor = Color.DarkSeaGreen;
+        }
+
+        private void DisplayWinnerMessage(string player)
+        {
+            MessageBox.Show($"Player {player} is the winner!!!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
