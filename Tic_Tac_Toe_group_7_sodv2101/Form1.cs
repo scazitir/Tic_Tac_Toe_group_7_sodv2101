@@ -202,7 +202,17 @@ namespace Tic_Tac_Toe_group_7_sodv2101
             }
 
             // Check for Draw result
+            if (!winnerFound && AllButtonsFilled())
+            {
+                DisplayDrawMessage();
+                SetEnableAsFalse();
+            }
 
+        }
+
+        private void DisplayDrawMessage()
+        {
+            MessageBox.Show($"It's a draw! No one wins this time.", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -291,6 +301,13 @@ namespace Tic_Tac_Toe_group_7_sodv2101
         private void DisplayWinnerMessage(string player)
         {
             MessageBox.Show($"Player {player} is the winner!!!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private bool AllButtonsFilled()
+        {
+            return button1.Text != "" && button2.Text != "" && button3.Text != "" &&
+                   button4.Text != "" && button5.Text != "" && button6.Text != "" &&
+                   button7.Text != "" && button8.Text != "" && button9.Text != "";
         }
     }
 }
