@@ -18,9 +18,6 @@ namespace Tic_Tac_Toe_group_7_sodv2101
             if (button1.Text == "X" && button2.Text == "X" && button3.Text == "X")
             {
                 HighLightButtons(button1, button2, button3);
-                //button1.BackColor = Color.AliceBlue;
-                //button2.BackColor = Color.AliceBlue;
-                //button3.BackColor = Color.AliceBlue;
 
                 DisplayWinnerMessage("X");
                 pointsCounter = int.Parse(playerXScore.Text);
@@ -263,7 +260,7 @@ namespace Tic_Tac_Toe_group_7_sodv2101
             HandleButtonClick(button9);
         }
 
-        public void HandleButtonClick(Button button)
+        private void HandleButtonClick(Button button)
         {
             if (playerTurnChecker == false)
             {
@@ -282,19 +279,25 @@ namespace Tic_Tac_Toe_group_7_sodv2101
 
         private void SetEnableAsFalse()
         {
-
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = false;
-            button9.Enabled = false;
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Button)
+                {
+                    control.Enabled = false;
+                }
+            }
         }
 
-
+        private void SetEnableAsTrue()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Button)
+                {
+                    control.Enabled = true;
+                }
+            }
+        }
 
         private void HighLightButtons(Button b1, Button b2, Button b3)
         {
@@ -308,6 +311,77 @@ namespace Tic_Tac_Toe_group_7_sodv2101
             return button1.Text != "" && button2.Text != "" && button3.Text != "" &&
                    button4.Text != "" && button5.Text != "" && button6.Text != "" &&
                    button7.Text != "" && button8.Text != "" && button9.Text != "";
+        }
+
+        private void EmptyButtons()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Button)
+                {
+                    control.Text = "";
+                }
+            }
+        }
+
+        private void SetBackColorToOriginal()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Button)
+                {
+                    control.BackColor = Color.WhiteSmoke;
+                }
+            }
+        }
+
+        private void newGameBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetEnableAsTrue();
+                EmptyButtons();
+                playerXScore.Text = "0";
+                playerOScore.Text = "0";
+                SetBackColorToOriginal();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Tic Tac Toe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetEnableAsTrue();
+                EmptyButtons();
+                newGameBtn.Enabled = true;
+                SetBackColorToOriginal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Tic Tac Toe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult userExit;
+                userExit = MessageBox.Show("Would you like to close the game?", "Tic Tac Toe", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (userExit == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Tic Tac Toe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
     }
 }
